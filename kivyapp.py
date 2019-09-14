@@ -30,7 +30,7 @@ class Controller(GridLayout):
 
 
     def divide_button(self, instance):
-        self.na = '\u20A6'
+        # self.na = '\u20A6'
         inflow = int(self.inflow.text)
         self.inflow.text = ""
         if not inflow:
@@ -45,7 +45,7 @@ class Controller(GridLayout):
             self.major = str(inflow * 0.25)
             # self.add_widget(Label())   
 
-        with open(f"Division details for {self.n}{inflow}.docx", "w") as d:
+        with open(f"Division details for {self.n}{inflow}.docx", "w", encoding='utf-8') as d:
             d.write(f"Tithe - 10%: {self.n}{self.tithe}")  
             
         # self.add_widget(Label(text=f"Division for {self.n}{inflow}"))     
